@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Migration App - Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Sistema de Migra??o de Dados GCPJ</h1>
+    <p class="lead">Ferramenta para migra??o, an?lise e valida??o de dados GCPJ.</p>
+    <hr class="my-4">
+    <p>Esta aplica??o permite importar, validar e processar dados para migra??o entre sistemas, com foco em dados do GCPJ.</p>
+    
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Upload de Dados</h5>
+                    <p class="card-text">Fa?a upload de arquivos CSV ou Excel para processamento.</p>
+                    <a href="{{ url_for('upload_file') }}" class="btn btn-primary">Iniciar Upload</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">An?lise de Completude</h5>
+                    <p class="card-text">Verifica??o da completude e qualidade dos dados.</p>
+                    <a href="#" class="btn btn-secondary">Analisar Dados</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Relat?rios</h5>
+                    <p class="card-text">Visualiza??o de relat?rios e resultados de processamento.</p>
+                    <a href="{{ url_for('results') }}" class="btn btn-info">Ver Relat?rios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

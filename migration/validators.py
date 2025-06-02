@@ -1,73 +1,71 @@
 import pandas as pd
+import os
 
-def validate_data(dataframe):
-    """
-    Valida um DataFrame para garantir que atende aos requisitos de migra??o.
-    
-    Args:
-        dataframe (pd.DataFrame): DataFrame a ser validado
+def validate_file_format(filepath, allowed_extensions=None):
+    """Validate if the file has a supported extension"""
+    if allowed_extensions is None:
+        allowed_extensions = {'xlsx', 'xls'}
         
-    Returns:
-        dict: Resultado da valida??o com status e mensagens
-    """
-    result = {
-        'valid': True,
-        'message': 'Dados v?lidos',
-        'details': []
-    }
-    
-    # Verificar se o DataFrame est? vazio
-    if dataframe.empty:
-        result['valid'] = False
-        result['message'] = 'O arquivo est? vazio'
-        return result
-    
-    # Verificar colunas obrigat?rias
-    required_columns = ['GCPJ', 'PROCESSO']  # Ajuste conforme necess?rio
-    missing_columns = [col for col in required_columns if col not in dataframe.columns]
-    
-    if missing_columns:
-        result['valid'] = False
-        result['message'] = f"Colunas obrigat?rias ausentes: {', '.join(missing_columns)}"
-        result['details'].append({
-            'error_type': 'missing_columns',
-            'columns': missing_columns
-        })
-        return result
-    
-    # Verificar tipos de dados
-    # Exemplo: verificar se a coluna GCPJ cont?m apenas n?meros
-    if 'GCPJ' in dataframe.columns:
-        non_numeric = dataframe['GCPJ'].apply(lambda x: not str(x).isdigit()).sum()
-        if non_numeric > 0:
-            result['valid'] = False
-            result['message'] = f"A coluna GCPJ cont?m {non_numeric} valores n?o num?ricos"
-            result['details'].append({
-                'error_type': 'invalid_data_type',
-                'column': 'GCPJ',
-                'issue': 'non_numeric',
-                'count': non_numeric
-            })
-    
-    # Verificar valores nulos em colunas cr?ticas
-    critical_columns = ['GCPJ', 'PROCESSO']  # Ajuste conforme necess?rio
-    null_issues = []
-    
-    for col in critical_columns:
-        if col in dataframe.columns:
-            null_count = dataframe[col].isnull().sum()
-            if null_count > 0:
-                null_issues.append({
-                    'column': col,
-                    'null_count': null_count
-                })
-    
-    if null_issues:
-        result['valid'] = False
-        result['message'] = "Valores nulos em colunas cr?ticas"
-        result['details'].append({
-            'error_type': 'null_values',
-            'issues': null_issues
-        })
-    
-    return result
+    ext = os.path.splitext(filepath)[1][1:].lower()
+    return ext in allowed_extensions
+
+def validate_primary_file(filepath):
+    """Validate the primary source file structure"""
+    try:
+        df = pd.read_excel(filepath)
+        
+        # Check required columns
+        required_columns = ['GCPJ', 'PROCESSO', 'TIPO_ACAO', 'ENVOLVIDO', 'CPF', 
+                          'REGIONAL', 'CARTEIRA', 'AGENCIA', 'CONTA', 
+                          'ORGAO_JULGADOR', 'COMARCA', 'UF', 'GESTOR']
+        
+        missing_columns = [col for col in required_columns if col not in df.columns]
+        
+        if missing_columns:
+            return False, f"Missing columns in primary file: {', '.join(missing_columns)}"
+        
+        # Check if file has data
+        if len(df) == 0:
+            return False, "Primary file contains no data"
+            
+        return True, "Primary file is valid"
+        
+    except Exception as e:
+        return False, f"Error validating primary file: {str(e)}"
+
+def validate_secondary_file(filepath):
+    """Validate the secondary source file structure"""
+    try:
+        df = pd.read_excel(filepath)
+        
+        # Check required columns
+        required_columns = ['GCPJ', 'TIPO', 'PROCADV_CONTRATO']
+        
+        missing_columns = [col for col in required_columns if col not in df.columns]
+        
+        if missing_columns:
+            return False, f"Missing columns in secondary file: {', '.join(missing_columns)}"
+        
+        # Check if file has data
+        if len(df) == 0:
+            return False, "Secondary file contains no data"
+            
+        return True, "Secondary file is valid"
+        
+    except Exception as e:
+        return False, f"Error validating secondary file: {str(e)}"
+
+def validate_template_file(filepath):
+    """Validate the template file structure"""
+    try:
+        # Attempt to read the Sheet tab
+        df = pd.read_excel(filepath, sheet_name='Sheet')
+        
+        # Check if file has columns
+        if len(df.columns) == 0:
+            return False, "Template file has no columns in Sheet tab"
+            
+        return True, "Template file is valid"
+        
+    except Exception as e:
+        return False, f"Error validating template file: {str(e)}"

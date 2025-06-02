@@ -1,0 +1,180 @@
+{
+  "timestamp": "2025-05-30 16:48:38",
+  "summary": {
+    "total_gcpj_requested": 9088,
+    "gcpj_migrated": 745,
+    "gcpj_not_found": 8343,
+    "total_records_generated": 1341,
+    "records_complete": 0,
+    "records_partial": 1341
+  },
+  "column_completeness": {
+    "CÓD. INTERNO": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "PROCESSO": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "PROCEDIMENTO": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "NOME PARTE CONTRÁRIA PRINCIPAL": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "CPF/CNPJ": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "DEVEDOR SOLIDÁRIO 1": {
+      "filled": 288,
+      "total": 1341,
+      "percentage": 21.48
+    },
+    "CPF 1": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "DEVEDOR SOLIDÁRIO 2": {
+      "filled": 1,
+      "total": 1341,
+      "percentage": 0.07
+    },
+    "CPF 2": {
+      "filled": 1,
+      "total": 1341,
+      "percentage": 0.07
+    },
+    "ORGANIZAÇÃO CLIENTE": {
+      "filled": 1341,
+      "total": 1341,
+      "percentage": 100.0
+    },
+    "ESCRITÓRIO": {
+      "filled": 1341,
+      "total": 1341,
+      "percentage": 100.0
+    },
+    "TIPO DE OPERAÇÃO/CARTEIRA": {
+      "filled": 1303,
+      "total": 1341,
+      "percentage": 97.17
+    },
+    "OPERAÇÃO": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "AGÊNCIA": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "CONTA": {
+      "filled": 1304,
+      "total": 1341,
+      "percentage": 97.24
+    },
+    "SEGMENTO DO CONTRATO": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "VARA": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "FORUM": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "COMARCA": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "UF": {
+      "filled": 1275,
+      "total": 1341,
+      "percentage": 95.08
+    },
+    "ALERTA": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "PROVIDÊNCIA": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "MONITORAMENTO": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "PRAZO": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "PRAZO JUDICIAL": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "PLANO": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "GESTOR": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "ÁREA RESPONSÁVEL PROCESSO (EX-DEJUR)": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "RESPONSÁVEL PROCESSO (EX-DEJUR)": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "ÁREA RESPONSÁVEL PROCESSO [ESCRITÓRIO]": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    },
+    "RESPONSÁVEL PROCESSO [ESCRITÓRIO]": {
+      "filled": 1305,
+      "total": 1341,
+      "percentage": 97.32
+    },
+    "COMENTÁRIO (TICKET DE AJUIZAMENTO)": {
+      "filled": 0,
+      "total": 1341,
+      "percentage": 0.0
+    }
+  },
+  "data_quality_issues": [
+    {
+      "issue": "GCPJs não encontrados",
+      "count": 8343,
+      "severity": "HIGH"
+    }
+  ]
+}

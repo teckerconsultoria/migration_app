@@ -1,1 +1,1 @@
-# M?dulo de migra??o
+# Migration package initialization

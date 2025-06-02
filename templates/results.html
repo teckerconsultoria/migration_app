@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Migration Results - Data Migration Tool{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h2 class="mb-0">Migration Completed Successfully</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-success">
+                    <h4 class="alert-heading">Migration Summary</h4>
+                    <p>Total records migrated: <strong>{{ stats.total_rows }}</strong></p>
+                    <ul>
+                        <li><strong>{{ stats.fully_filled_columns }}</strong> columns with 100% completion</li>
+                        <li><strong>{{ stats.partially_filled_columns }}</strong> columns with partial completion</li>
+                        <li><strong>{{ stats.empty_columns }}</strong> columns left empty for future phases</li>
+                    </ul>
+                </div>
+                
+                <h4 class="mt-4">Column Completion Analysis</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Column</th>
+                                <th>Total Records</th>
+                                <th>Filled Records</th>
+                                <th>Completion</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for column, data in stats.column_stats.items() %}
+                            <tr>
+                                <td>{{ column }}</td>
+                                <td>{{ data.total }}</td>
+                                <td>{{ data.filled }}</td>
+                                <td>{{ data.percentage }}%</td>
+                                <td>
+                                    {% if data.percentage == 100 %}
+                                    <span class="badge bg-success">Complete</span>
+                                    {% elif data.percentage > 0 %}
+                                    <span class="badge bg-warning">Partial</span>
+                                    {% else %}
+                                    <span class="badge bg-secondary">Empty</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('download', filename=filename) }}" class="btn btn-primary btn-lg">
+                        <i class="bi bi-download"></i> Download Migration Result
+                    </a>
+                </div>
+                
+                <div class="alert alert-info mt-4">
+                    <h5>Next Steps</h5>
+                    <p>The Phase 1 migration is now complete. Please review the downloaded file to verify the data integrity before proceeding to Phase 2.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

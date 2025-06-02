@@ -1,41 +1,37 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Migration App - Home{% endblock %}
+{% block title %}Data Migration Tool - Home{% endblock %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1 class="display-4">Sistema de Migra??o de Dados GCPJ</h1>
-    <p class="lead">Ferramenta para migra??o, an?lise e valida??o de dados GCPJ.</p>
-    <hr class="my-4">
-    <p>Esta aplica??o permite importar, validar e processar dados para migra??o entre sistemas, com foco em dados do GCPJ.</p>
-    
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Upload de Dados</h5>
-                    <p class="card-text">Fa?a upload de arquivos CSV ou Excel para processamento.</p>
-                    <a href="{{ url_for('upload_file') }}" class="btn btn-primary">Iniciar Upload</a>
-                </div>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Data Migration Tool - Phase 1</h2>
             </div>
-        </div>
-        
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">An?lise de Completude</h5>
-                    <p class="card-text">Verifica??o da completude e qualidade dos dados.</p>
-                    <a href="#" class="btn btn-secondary">Analisar Dados</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Relat?rios</h5>
-                    <p class="card-text">Visualiza??o de relat?rios e resultados de processamento.</p>
-                    <a href="{{ url_for('results') }}" class="btn btn-info">Ver Relat?rios</a>
+            <div class="card-body">
+                <h3>Welcome to the Phase 1 Migration Tool</h3>
+                <p>This application helps you execute the Phase 1 of the data migration process according to our established plan.</p>
+                
+                <h4 class="mt-4">Migration Overview</h4>
+                <p>Phase 1 will process the following files:</p>
+                <ul>
+                    <li><strong>Primary Source:</strong> cópiaMOYA E LARA_BASE GCPJ ATIVOS</li>
+                    <li><strong>Secondary Source:</strong> 4.MOYA E LARA SOCIEDADE DE ADVOGADOS_PRÉVIA BASE ATIVA</li>
+                    <li><strong>Template:</strong> templatebancobradescosa.xlsx</li>
+                </ul>
+                
+                <h4 class="mt-4">Expected Results</h4>
+                <p>The migration will produce a new Excel file with:</p>
+                <ul>
+                    <li>All 14,787 records from the primary source</li>
+                    <li>14 columns with complete data (100% filled)</li>
+                    <li>4 columns with partial data (filled where correspondence exists)</li>
+                    <li>Original source columns preserved for reference</li>
+                </ul>
+                
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg">Start Migration Process</a>
                 </div>
             </div>
         </div>

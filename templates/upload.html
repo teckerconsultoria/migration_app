@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Files - Data Migration Tool{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Upload Migration Files</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="primary_file" class="form-label">Primary Source File</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="primary_file" name="primary_file" accept=".xlsx,.xls" required>
+                        </div>
+                        <div class="form-text">Upload the cópiaMOYA E LARA_BASE GCPJ ATIVOS Excel file</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="secondary_file" class="form-label">Secondary Source File</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="secondary_file" name="secondary_file" accept=".xlsx,.xls" required>
+                        </div>
+                        <div class="form-text">Upload the 4.MOYA E LARA SOCIEDADE DE ADVOGADOS_PRÉVIA BASE ATIVA Excel file</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="template_file" class="form-label">Template File</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="template_file" name="template_file" accept=".xlsx,.xls" required>
+                        </div>
+                        <div class="form-text">Upload the templatebancobradescosa.xlsx file</div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Upload and Process</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

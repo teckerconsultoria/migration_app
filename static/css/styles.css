@@ -1,86 +1,29 @@
-/* Estilos personalizados para a aplica??o Migration App */
-
+/* Custom styles for the migration app */
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    flex: 1;
-}
-
-.footer {
-    margin-top: auto;
-}
-
-.jumbotron {
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: .3rem;
-}
-
-.card {
-    transition: transform 0.3s;
-    margin-bottom: 20px;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.progress {
-    height: 25px;
-}
-
-.table-responsive {
-    overflow-x: auto;
-}
-
-/* Estilos para gr?ficos e visualiza??es */
-.chart-container {
-    position: relative;
-    margin: auto;
-    height: 300px;
-    width: 100%;
-}
-
-/* Estilos para alertas e mensagens */
-.alert-success {
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    color: #155724;
-}
-
-.alert-warning {
-    background-color: #fff3cd;
-    border-color: #ffeeba;
-    color: #856404;
-}
-
-.alert-danger {
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    color: #721c24;
-}
-
-/* Estilos para ?rea de upload */
-.upload-area {
-    border: 2px dashed #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.upload-area:hover {
     background-color: #f8f9fa;
 }
 
-.upload-area.dragover {
-    background-color: #e9ecef;
-    border-color: #007bff;
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-weight: 500;
+}
+
+.table-responsive {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.form-text {
+    color: #6c757d;
+}
+
+/* Progress indicator styles */
+.spinner-border {
+    display: inline-block;
+    margin: 20px auto;
 }

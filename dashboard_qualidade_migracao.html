@@ -1,0 +1,460 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Dashboard de Qualidade - Migração GCPJ</title>
+            <meta charset="utf-8">
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+                .container { max-width: 1200px; margin: 0 auto; }
+                .header { background-color: #1e88e5; color: white; padding: 20px; border-radius: 5px; }
+                .metric-card { background-color: white; padding: 20px; margin: 10px; border-radius: 5px; 
+                              box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: inline-block; min-width: 200px; }
+                .success { color: #4caf50; }
+                .warning { color: #ff9800; }
+                .error { color: #f44336; }
+                .progress-bar { width: 100%; height: 20px; background-color: #e0e0e0; border-radius: 10px; }
+                .progress-fill { height: 100%; background-color: #4caf50; border-radius: 10px; }
+                table { width: 100%; border-collapse: collapse; background-color: white; }
+                th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+                th { background-color: #1e88e5; color: white; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>Dashboard de Qualidade - Migração GCPJ</h1>
+                    <p>Executado em: 30/05/2025 16:48</p>
+                </div>
+                
+                <h2>Métricas Gerais</h2>
+                <div>
+                    <div class="metric-card">
+                        <h3>GCPJs Processados</h3>
+                        <p style="font-size: 36px; font-weight: bold;" class="success">
+                            745 / 9088
+                        </p>
+                        <p>8.2% de sucesso</p>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3>Registros Gerados</h3>
+                        <p style="font-size: 36px; font-weight: bold;">
+                            1341
+                        </p>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3>Registros Completos</h3>
+                        <p style="font-size: 36px; font-weight: bold;" class="success">
+                            0
+                        </p>
+                        <p>0.0% do total</p>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3>Registros Parciais</h3>
+                        <p style="font-size: 36px; font-weight: bold;" class="warning">
+                            1341
+                        </p>
+                        <p>100.0% do total</p>
+                    </div>
+                </div>
+                
+                <h2>Completude por Coluna</h2>
+                <table>
+                    <tr>
+                        <th>Coluna</th>
+                        <th>Registros Preenchidos</th>
+                        <th>Taxa de Preenchimento</th>
+                        <th>Visualização</th>
+                    </tr>
+                    
+                <tr>
+                    <td>CÓD. INTERNO</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>PROCESSO</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>PROCEDIMENTO</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>NOME PARTE CONTRÁRIA PRINCIPAL</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>CPF/CNPJ</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>DEVEDOR SOLIDÁRIO 1</td>
+                    <td>288 / 1341</td>
+                    <td class="error">21.5%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 21.476510067114095%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>CPF 1</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>DEVEDOR SOLIDÁRIO 2</td>
+                    <td>1 / 1341</td>
+                    <td class="error">0.1%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.07457121551081282%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>CPF 2</td>
+                    <td>1 / 1341</td>
+                    <td class="error">0.1%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.07457121551081282%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>ORGANIZAÇÃO CLIENTE</td>
+                    <td>1341 / 1341</td>
+                    <td class="success">100.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>ESCRITÓRIO</td>
+                    <td>1341 / 1341</td>
+                    <td class="success">100.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>TIPO DE OPERAÇÃO/CARTEIRA</td>
+                    <td>1303 / 1341</td>
+                    <td class="success">97.2%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.16629381058911%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>OPERAÇÃO</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>AGÊNCIA</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>CONTA</td>
+                    <td>1304 / 1341</td>
+                    <td class="success">97.2%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.24086502609993%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>SEGMENTO DO CONTRATO</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>VARA</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>FORUM</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>COMARCA</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>UF</td>
+                    <td>1275 / 1341</td>
+                    <td class="success">95.1%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 95.07829977628636%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>ALERTA</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>PROVIDÊNCIA</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>MONITORAMENTO</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>PRAZO</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>PRAZO JUDICIAL</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>PLANO</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>GESTOR</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>ÁREA RESPONSÁVEL PROCESSO (EX-DEJUR)</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>RESPONSÁVEL PROCESSO (EX-DEJUR)</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>ÁREA RESPONSÁVEL PROCESSO [ESCRITÓRIO]</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>RESPONSÁVEL PROCESSO [ESCRITÓRIO]</td>
+                    <td>1305 / 1341</td>
+                    <td class="success">97.3%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 97.31543624161074%"></div>
+                </div>
+            </td>
+                </tr>
+            
+
+                <tr>
+                    <td>COMENTÁRIO (TICKET DE AJUIZAMENTO)</td>
+                    <td>0 / 1341</td>
+                    <td class="error">0.0%</td>
+                    <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0.0%"></div>
+                </div>
+            </td>
+                </tr>
+            
+                </table>
+            </div>
+        </body>
+        </html>
+        

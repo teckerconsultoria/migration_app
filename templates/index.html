@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Data Migration Tool - Home{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Data Migration Tool - Phase 1</h2>
+            </div>
+            <div class="card-body">
+                <h3>Welcome to the Phase 1 Migration Tool</h3>
+                <p>This application helps you execute the Phase 1 of the data migration process according to our established plan.</p>
+                
+                <h4 class="mt-4">Migration Overview</h4>
+                <p>Phase 1 will process the following files:</p>
+                <ul>
+                    <li><strong>Primary Source:</strong> cópiaMOYA E LARA_BASE GCPJ ATIVOS</li>
+                    <li><strong>Secondary Source:</strong> 4.MOYA E LARA SOCIEDADE DE ADVOGADOS_PRÉVIA BASE ATIVA</li>
+                    <li><strong>Template:</strong> templatebancobradescosa.xlsx</li>
+                </ul>
+                
+                <h4 class="mt-4">Expected Results</h4>
+                <p>The migration will produce a new Excel file with:</p>
+                <ul>
+                    <li>All 14,787 records from the primary source</li>
+                    <li>14 columns with complete data (100% filled)</li>
+                    <li>4 columns with partial data (filled where correspondence exists)</li>
+                    <li>Original source columns preserved for reference</li>
+                </ul>
+                
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg">Start Migration Process</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

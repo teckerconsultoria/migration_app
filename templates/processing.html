@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Processing - Data Migration Tool{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Processing Migration</h2>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <h4>Your migration is being processed...</h4>
+                <p>This may take a few minutes. Please do not close this page.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Automatically redirect to results page when processing is complete
+    setTimeout(function() {
+        window.location.href = "{{ url_for('results', filename='migration_result.xlsx') }}";
+    }, 2000);
+</script>
+{% endblock %}
